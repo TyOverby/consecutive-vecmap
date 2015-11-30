@@ -1,8 +1,3 @@
-#[cfg(test)]
-extern crate rand;
-#[cfg(test)]
-use rand::Rng;
-
 use std::collections::VecDeque;
 use std::collections::vec_deque::Iter as VecDequeIter;
 use std::collections::vec_deque::IterMut as VecDequeIterMut;
@@ -243,6 +238,11 @@ impl <'a, V> Iterator for IterMut<'a, V> {
         }
     }
 }
+
+#[cfg(test)]
+extern crate rand;
+#[cfg(test)]
+use rand::Rng;
 
 #[test]
 fn single_insert() {
