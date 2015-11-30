@@ -327,6 +327,7 @@ fn fuzz() {
             iter -= 1;
 
             assert_eq!(map.remove(i), Some(i_3));
+            assert!(!map.contains_key(i));
             assert_eq!(map.len(), iter);
         }
         assert_eq!(map.len(), 0);
